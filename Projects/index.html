@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Наша визитка</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: black;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 200%;
+      height: 200%;
+      background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') repeat;
+      background-size: cover;
+      z-index: -1;
+      animation: moveBackground 60s linear infinite;
+      opacity: 0.15;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50%, -50%); }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 50px;
+      flex-wrap: wrap;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      object-fit: cover;
+      margin-bottom: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background-color: #1e90ff;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .links a:hover {
+      background-color: #0b75d1;
+      transform: scale(1.1);
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .examples, .pricing {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .example-card {
+      width: 300px;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s;
+    }
+
+    .example-card:hover {
+      transform: scale(1.05);
+    }
+
+    .example-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .pricing-table {
+      color: #ddd;
+      border-collapse: collapse;
+      margin: 0 auto;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .pricing-table th, .pricing-table td {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 15px;
+    }
+
+    .pricing-table th {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <img src="image/photo_2025-05-24_00-43-55.jpg" alt="Avatar 1" class="avatar">
+      <h2>Адвокат</h2>
+      <p>Меня зовут Аддвокат. Я разработчик, который не просто пишет код — я создаю решения.  
+  я уже делаю сайты, телеграм-ботов, приложения и инструменты, которые реально работают.  
+  Мой подход — строго, чётко, по делу. Никакой воды — только результат.</p>
+      <div class="links">
+        <a href="https://t.me/ADBOKATUPA" target="_blank">Telegram</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/photo_2025-05-18_02-18-57.jpg" alt="Avatar 2" class="avatar">
+      <h2>FGBruh</h2>
+      <p>В программировании с 2021 года. Самоучка: начал с нуля, освоил Python за 3 года,  
+  прошёл профкурсы и вышел на уверенный уровень. Сейчас работаю на фрилансе —  
+  решаю задачи, пишу код и помогаю людям и компаниям.
+</p>
+      <div class="links">
+        <a href="https://t.me/FGBruh" target="_blank">Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🌐 Примеры наших сайтов</h2>
+    <div class="examples">
+      <div class="example-card">
+        <img src="image/photo_1_2025-05-31_22-24-19.jpg" alt="Сайт 1">
+        <p>Сайт-визитка для фрилансера</p>
+      </div>
+      <div class="example-card">
+        <img src="image/photo_2_2025-05-31_22-24-19.jpg" alt="Сайт 2">
+        <p>Интернет-магазин под ключ</p>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <h2>💸 Цены</h2>
+    <table class="pricing-table">
+      <tr>
+        <th>Услуга</th>
+        <th>Описание</th>
+        <th>Цена</th>
+      </tr>
+      <tr>
+        <td>Сайт-визитка</td>
+        <td>Простой сайт с информацией о вас</td>
+        <td>от 5$ или 380 Telegram Stars</td>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="footer">
+    © 2025  Все права защищены.
+  </div>
+
+</body>
+</html>
